@@ -1,16 +1,32 @@
 const express = require('express');
 const path = require ('path');
+const notes = require('./db/db.json');
+const fs = require('fs');
 
 
 //console.log(express)
 
 const app = express ()
-const PORT = 3001
+const PORT = process.env.PORT || 3001;
+
+currentID = notes.length;
+
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(express.static('public'));
 
 
-app.get('/', (req, res) => {
-    res.send('<h1>Hello World!<h1>')
-  })
+
+// pull home page
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/index.html'))
+);
+
+
+
+
 
 
 
@@ -19,5 +35,5 @@ app.get('/', (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log(`server listening on http://localhost:${PORT}`)
+    console.log(`Note Taker listening on http://localhost:${PORT}`)
 })
