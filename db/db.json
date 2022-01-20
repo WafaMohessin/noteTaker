@@ -1,6 +1,2 @@
-/* [{"title":"First Note",
-    "text":"This is my 1st note",
-    "id":"6f7e52c3-6183-4a5a-bcf2-382101a0f629"},
-    {"title":"Second Note",
-        "text":"This is my 2nd note",
-        "id":"0febf924-5a1a-49ae-9c96-4e81ef0a8b2d"}] */
+[{"title":"Test Title","text":"Test text"},
+    {"title":"hello","text":"hi","id":"eff1dd26-e358-4a20-b510-0c2e1d38e559"}]
